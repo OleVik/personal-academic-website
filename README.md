@@ -47,6 +47,7 @@ layout: default
 More options are [available here](https://jekyllrb.com/docs/frontmatter/).
 
 Notes:
+
 1. Indentation, if used, must be two spaces (not tabs).
 2. Colons (`:`) can only be used in strings if enclosed in quotes.
 3. Dashes can be used in strings, but should otherwise also be enclosed in quotes (see [this](https://docs.saltstack.com/en/latest/topics/yaml/)).
