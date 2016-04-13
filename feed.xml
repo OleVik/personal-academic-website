@@ -1,0 +1,29 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>{{ site.name | xml_escape }}</title>
+		<description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>		
+		<link>{{ site.url }}</link>
+		<atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+		{% for page in site.pages %}
+			{% if page.title %}
+				<item>
+					<title>{{ page.title | xml_escape }}</title>
+					{% if page.author.name %}
+						<dc:creator>{{ page.author.name | xml_escape }}</dc:creator>
+					{% endif %}        
+					{% if page.excerpt %}
+						<description>{{ page.excerpt | xml_escape }}</description>
+					{% else %}
+						<description>{{ page.content | strip_html | xml_escape }}</description>
+					{% endif %}
+					<pubDate>{{ page.date | date_to_rfc822 }}</pubDate>
+					<link>{{ site.url }}{{ page.url }}</link>
+					<guid isPermaLink="true">{{ site.url }}{{ page.url }}</guid>
+				</item>
+			{% endif %}
+		{% endfor %}
+	</channel>
+</rss>

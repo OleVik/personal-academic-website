@@ -1,0 +1,40 @@
+<!-- WebFont Loader -->
+<link href="{{ site.baseurl }}/assets/css/font/montserrat.css" rel="stylesheet" type="text/css" media="none" onload="this.media='all';">
+
+<!-- Required meta tags always come first -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<link href="/feed.xml" type="application/rss+xml" rel="alternate" title="Latest content (atom)" />
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/pure-drawer.css" media="screen">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+
+<!-- Extensive Metadata -->
+{% if page.summary %}
+<meta name="description" content="{{ page.summary | escape }}">
+{% endif %}
+{% if page.tags %}
+<meta name="keywords" content="{{ page.tags | join: ', ' | escape }}"/>
+{% endif %}
+
+<!-- Facebook tags -->
+<meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+<meta property="og:type" content="{% if page.website %}website{% else %}article{% endif %}">
+<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}/">
+<meta property="og:image" content="{% if page.thumbnail %}{{ page.thumbnail | prepend: site.image_base | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.avatar | prepend: site.baseurl | prepend: site.url }}{% endif %}">
+<meta property="og:description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines | truncate: 160 | escape }}{% endif %}">
+<meta property="og:site_name" content="{{ site.name | escape }}">
+<meta property="og:locale" content="{% if page.locale %}{{ page.locale }}{% else %}{{ site.locale }}{% endif %}">
+
+{% if page.date %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+<meta property="article:author" content="{{ site.fb_admins }}">
+	{% for post in site.related_posts limit:3 %}
+	<meta property="og:see_also" content="{{ post.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+	{% endfor %}
+{% endif %}
+
+<title>{{ site.name }} - {{ page.title }}</title>

@@ -1,0 +1,365 @@
+/* Import FontAwesome, for pretty icons */
+@import url('fontawesome-embedded.css');
+
+/* Style Links */
+a,
+a:link,
+a:visited {
+	color: black;
+	text-decoration: none;
+}
+a:hover,
+a:active {
+	color: black;
+	text-decoration: underline;
+}
+article a,
+article a:link,
+article a:visited {
+	border-bottom: 1px dashed black;
+}
+article a:hover,
+article a:active {
+	text-decoration: none;
+	border-bottom: 1px dotted black;
+}
+
+a.social,
+a.social:visited,
+a.social:link,
+a.social:hover,
+a.social:active,
+article a.anchorjs-link {
+	text-decoration: none;
+	border: 0;
+}
+.fa-facebook:before {color: #3B5998;}
+.fa-facebook:hover:before {color: #22407F;}
+.fa-twitter:before {color: #55ACEE;}
+.fa-twitter:hover:before {color: #3C93D5;}
+.fa-gplus:before {color: #DD4B39;}
+.fa-gplus:hover:before {color: #C43220;}
+
+/* Defaults */
+
+body {
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	line-height: 1.8;
+	background-color: rgb(241, 241, 241);
+}
+body p {font-size: 1.1em;}
+body blockquote p {font-size: 1.4em;}
+
+/* Ensure full-height columns */
+.container-fluid,
+.container-fluid .row {
+	min-height: 100%;
+	min-height: 100vh;
+}
+.cv .container-fluid,
+.cv .container-fluid .row {
+	min-height: auto;
+}
+.row {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+}
+.row > [class*='col-'] {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Style and structure the main content */
+main {
+	min-height: 100%;
+	min-height: 100vh;
+	padding: 0.9375rem 2em 2em 2em;
+}
+main article,
+.mobile_header {
+	width: 100%;
+	margin: 0 auto 3em auto;
+	background: white;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+}
+.mobile_header {padding: 1.5em 0.5em 0.25em 0.5em;}
+h1, h2, h3, h4, h5, h6 {
+	font-family: Arial, sans-serif;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	font-family: Montserrat, 'Helvetica Neue', Arial, sans-serif;
+	margin-bottom: 0.5em;
+}
+
+/* Style and structure the menu */
+.sidebar.col-md-3 {
+	padding: 2em 1em;
+	font-size: 1.2em;
+	background: white;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+}
+.sidebar h2 {
+	margin: 0 auto 1em auto;
+	text-align: center;
+}
+.sidebar h2 a {color: black;}
+.pure-toggle-label[data-toggle-label="left"],
+.pure-toggle-label[for="pure-toggle-left"] {
+	position: absolute;
+	top: 1em;
+	left: 0.25em;
+}
+.nav.navigation li {
+	padding: 1em 0;
+	position: relative;
+	border-top: 1px solid rgba(51, 51, 51, 0.1);
+}
+.nav.navigation li:last-child {
+	border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+}
+.nav.navigation li a {
+	width: 100%;
+	color: #333333;
+}
+.nav.navigation li a:hover {
+	color: #707070;
+	text-decoration: none;
+}
+.nav.navigation .collapse li:first-child {border: 0;}
+.nav.navigation .collapse li:last-child {border: 0;}
+.external_links {margin-top: 2em;}
+.external_links li {padding: 1em 0;}
+.external_links a {
+	width: 100%;
+	color: black;
+	text-decoration: underline;
+}
+.external_links a:hover {
+	color: #333333;
+	text-decoration: none;
+}
+form[role="search"] {margin-top: 2em;}
+form[role="search"] .input-group {
+	width: 100%;
+    max-width: 25em;
+}
+.nav.navigation li a[data-toggle="collapse"] {padding-right: 1.5em;}
+.nav.navigation li a[data-toggle="collapse"]:after {
+	content: '\e812';
+	color: black;
+	font-size: 1.5em;
+	font-family: fontawesome;
+	line-height: 1;
+	position: absolute;
+	right: 0;
+}
+nav[role="navigation"] .pure-toggle-icon {background-color: transparent;}
+nav[role="navigation"] .pure-toggle-label:hover .pure-toggle-icon {background-color: transparent;}
+nav[role="navigation"] .pure-toggle-icon:before {
+	transform: translateX(-50%) translateY(-10px) rotate(45deg);
+	-webkit-transform: translateX(-50%) translateY(-10px) rotate(45deg);
+}
+nav[role="navigation"] .pure-toggle-icon:after {
+	transform: translateX(-50%) translateY(-10px) rotate(-45deg);
+	-webkit-transform: translateX(-50%) translateY(-10px) rotate(-45deg);
+}
+
+/* Structure various elements */
+main article {padding: 2em;}
+form, ol, p, ul {margin-bottom: 1em;}
+hr {
+	border-top: 1px solid #eceeef;
+	border-width: 0;
+	border-top: 1px solid #e1e1e1;
+}
+dl {
+	letter-spacing: -0.31em;
+	*letter-spacing: normal;
+	word-spacing: -0.43em;
+}
+dt,
+dd {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	letter-spacing: normal;
+	word-spacing: normal;
+	vertical-align: top;
+	width: 46%;
+	padding: 3px 2% 4px;
+	margin: 0;
+}
+dt {margin-right: -1px;}
+dl {}
+dt,
+dd {border-top: 1px solid #999;}
+blockquote {
+	margin: 0.5em 0;
+	padding: 0.5rem 1rem;
+	font-style: italic;
+}
+blockquote p {margin: 0;}
+pre {
+	padding: .2rem .4rem;
+	font-size: 90%;
+	color: #bd4147;
+	background-color: #f7f7f9;
+	border-radius: .25rem;
+}
+
+/* Style and structure the CV */
+.cv blockquote {font-style: normal;}
+.cv hr {margin: 0.5em auto 1.5em auto;}
+.cv .row > [class*='col-'] {display: block;}
+.cv .col-sm-10 * {display: inline;}
+.cv .col-sm-10 h1, 
+.cv .col-sm-10 h2, 
+.cv .col-sm-10 h3, 
+.cv .col-sm-10 h4, 
+.cv .col-sm-10 h5, 
+.cv .col-sm-10 h6 {display: block;}
+.cv .col-sm-10 .text-justify {display: block;}
+.cv .container-fluid,
+.cv .container-fluid .row {min-height: auto;}
+.cv article {
+	padding: 2em 1.5em;
+	font-size: 1.2em;
+	line-height: 1.5;
+}
+.cv h3 {margin-top: 1em;}
+
+/* Spacing in search-results */
+.search h4 {margin: 2em 0 0.5em 0;}
+
+/* CV specific print style */
+.page-break {page-break-before: always;}
+@page {
+	size: a4;
+	width: 21cm;
+	height: 29.7cm;
+	margin: 0mm;
+}
+@media print {
+    html,
+    body {
+		width: 21cm;
+    }
+	a,
+	a:active,
+	a:hover,
+	a:visited {
+		color: #000;
+		text-decoration: none;
+	}
+	a:active,
+	a:hover,
+	body {
+		color: #000;
+	}
+	body {
+		font-family: Palatino;
+		background: none;
+		width: 100%
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-family: Georgia;
+	}
+	.container {
+		width: 100%;
+		max-width: 100%;
+		padding-top: 0;
+	}
+	.cv .title {margin: 0;}
+	.text-sm-right {text-align: right!important;}
+	p {margin-bottom: 1.5em;}
+	blockquote {border: 0;}
+	blockquote,
+	body {
+		font-size: 12pt;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {margin: .25em 0 .5em;}
+	h1 {font-size: 36.621pt;}
+	h2 {font-size: 29.297pt;}
+	h3 {font-size: 23.438pt;}
+	h4 {font-size: 18.75pt;}
+	h5 {font-size: 15pt;}
+	.col-sm-2,
+	.col-sm-4,
+	.col-sm-7,
+	.col-sm-8,
+	.col-sm-10,
+	.col-sm-12 {float: left;}
+	.col-sm-12 {width: 100%;}
+	.col-sm-10 {width: 83.33333333%;}
+	.col-sm-8 {width: 66.66666667%;}
+	.col-sm-7 {width: 58.33333333%;}
+	.col-sm-4 {width: 33.33333333%;}
+	.col-sm-2 {width: 16.66666667%;}
+}
+
+/* Responsive sizes */
+@media only screen and (max-width: 320px) {
+	main header.mobile_header {height: 5em;}
+	main header h2 {
+		float: right;
+		margin-right: 0.5em;
+	}
+}
+@media only screen and (max-width: 360px) {
+	.sidebar.col-md-3 {padding-top: 3em;}
+	main article,
+	main footer {padding: 1em 0.5em;}
+	.pure-pusher .pure-toggle-label[data-toggle-label="left"] {top: 0.5em;}
+	nav[role="navigation"] .pure-toggle-label[data-toggle-label="left"] {top: 1.5em;}
+}
+@media only screen and (max-width: 544px) {
+	.pure-pusher {margin-right: -6px !important;}
+	.pure-pusher,
+	.container-fluid,
+	.container-fluid .row,
+	main.content {
+		margin: 0;
+		padding: 0;
+	}
+	.sidebar.col-md-3 {
+		padding-top: 5em;
+		font-size: 1.4em;
+	}
+	.pure-pusher .pure-toggle-label[data-toggle-label="left"] {
+		top: 0.5em;
+		left: 0.5em;
+	}
+	nav[role="navigation"] .pure-toggle-label[for="pure-toggle-left"] {
+		top: 1.5em;
+		left: 0.25em;
+	}
+	main header.mobile_header {margin-bottom: 1em;}
+	main header h2 {font-size: 2em;}
+	main article,
+	main footer {padding: 1em;}
+}
+@media only screen and (min-width: 544px) {
+	.sidebar.col-md-3 {
+		padding-top: 5em;
+		font-size: 1em;
+	}
+	.sidebar.col-md-3.hidden-sm-down {padding-top: 2.5em;}
+	.pure-pusher .pure-toggle-label[data-toggle-label="left"] {
+		top: 1.5em;
+		left: 1.5em;
+	}
+	nav[role="navigation"] .pure-toggle-label[for="pure-toggle-left"] {
+		top: 1.5em;
+		left: 0.25em;
+	}
+}
+@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1200px) {}
+
