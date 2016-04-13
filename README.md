@@ -19,6 +19,9 @@ A skeleton-site for a personal academic website, written in Jekyll for hosting w
 
 Edit the pages using any Markdown-editor (see below) or text-editor, then upload them.
 
+### Custom Domain
+If you want to use a custom domain, ie. not `username.github.io` but something like `mywebsite.com`, read [this guide](https://help.github.com/articles/using-a-custom-domain-with-github-pages/).
+
 ## Workflow
 Pages are written Markdown and use FrontMatter. For Markdown, see [this cheatsheet](http://ricostacruz.com/cheatsheets/markdown.html) or [this quick guide](https://milanaryal.com/2015/writing-on-github-pages-and-jekyll-using-markdown/). Alternatively, view the default "Hello"-document on [StackEdit](https://stackedit.io/editor).
 
