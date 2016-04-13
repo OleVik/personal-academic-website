@@ -15,7 +15,8 @@ A skeleton-site for a personal academic website, written in Jekyll for hosting w
 1. Register an account with GitHub
 2. Fork `https://github.com/OleVik/personal-academic-website`
 3. Rename repository to `username.github.io`, where `username` is your GitHub-username
-4. Edit Markdown-files (`.md`)
+4. Set `baseurl` to `username.github.io` in `_config.yml`
+5. Edit Markdown-files (`.md`)
 
 Edit the pages using any Markdown-editor (see below) or text-editor, then upload them.
 
@@ -114,9 +115,9 @@ Other Markdown and text.
 ```
 
 #### Site settings
-The links in the menu, and their order, are edited through `_config.yml`. The format is also nested YAML lists, like the FrontMatter described above. The `name` and `description` variable should also be set, as well as `mathjax: true` if you need to render MathJax formulas on pages.
+The links in the menu, and their order, are edited through `_config.yml`. The format is also nested YAML lists, like the FrontMatter described above. **'baseurl' must be set to your repository (eg. `baseurl: username.github.io`), or the build will fail.** The `name` and `description` variable should also be set, as well as `mathjax: true` if you need to render MathJax formulas on pages.
 
-The `markdown, encoding, baseurl, url, locale, gems` variables **should not be changed**.
+The `markdown, encoding, locale` variables **should not be changed**.
 
 To find the right page-link (`#somethingonthepage`) you open the page, hover a heading so that the icon-link displays, right-click it and choose "Copy link". Everything after the `#` is the link for this specific title on the page.
 
