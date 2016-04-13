@@ -208,6 +208,7 @@ pre {
 	background-color: #f7f7f9;
 	border-radius: .25rem;
 }
+.highlight {max-width: 80vw;}
 
 /* Style and structure the CV */
 .cv blockquote {font-style: normal;}

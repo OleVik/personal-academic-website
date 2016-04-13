@@ -1,4 +1,4 @@
-name: Researcher Name
+name: Researcher
 description: Personal website
 menu:
  - page: About
@@ -50,7 +50,5 @@ menu_external:
 mathjax: false
 markdown: kramdown
 encoding: utf-8
-baseurl: file:///C:/Users/Ole/GitHub/Almaas/_site/
-# Live baseurl: my-site
-url: http://localhost:4000
+baseurl: olevik.github.io
 locale: en_GB
