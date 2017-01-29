@@ -1,20 +1,84 @@
----
-sitemap: false
----
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for post in site.posts %}
+  
+  
+  
   <url>
-    <loc>{{ site.url }}{{ post.url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <loc>/about.html</loc>
+    <lastmod>2017-01-30T00:10:54+01:00</lastmod>
   </url>
-  {% endfor %}
-  {% for page in site.pages %}
-  {% if page.sitemap != false %}
+  
+  
+  
   <url>
-    <loc>{{ site.url }}{{ page.url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <loc>/accolades.html</loc>
+    <lastmod>2017-01-30T00:10:54+01:00</lastmod>
   </url>
-  {% endif %}
-  {% endfor %}
+  
+  
+  
+  <url>
+    <loc>/cv.html</loc>
+    <lastmod>2017-01-30T00:10:54+01:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>/assets/feed.json</loc>
+    <lastmod>2017-01-30T00:10:54+01:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>/feed.xml</loc>
+    <lastmod>2017-01-30T00:10:54+01:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>/search/</loc>
+    <lastmod>2017-01-30T00:10:54+01:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2017-01-30T00:10:54+01:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>/media.html</loc>
+    <lastmod>2017-01-30T00:10:54+01:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>/papers.html</loc>
+    <lastmod>2017-01-30T00:10:54+01:00</lastmod>
+  </url>
+  
+  
+  
+  <url>
+    <loc>/research.html</loc>
+    <lastmod>2017-01-30T00:10:54+01:00</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>/teaching.html</loc>
+    <lastmod>2017-01-30T00:10:54+01:00</lastmod>
+  </url>
+  
+  
 </urlset>

@@ -1,52 +1,129 @@
----
-layout: null
----
-{% assign first = true %}
+
 [
-{% for collection in site.collections %}
-	{% for item in collection %}
-		{% for item in site.[item.label] %}
-			{% if item.title != null and item.title != empty %}
-			{% unless first %},{% endunless %}{
-				"title": {{item.title | jsonify}},
-				"content": {{item.content | markdownify | strip_html | jsonify}},
-				"link": "{{ site.baseurl }}{{ item.url }}",
-				"date": "{{ item.date }}",
-				"excerpt": "{{ item.snippet }}",
-				"search_omit": "{{ item.search_omit }}"
-			}
-			{% assign first = false %}
-			{% endif %}
-		{% endfor %}
-	{% endfor %}
-{% endfor %}
+
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
+		
+	
 
 
-{% for post in site.posts %}
-	{% if post.title != null and post.title != empty %}
-	{% unless first %},{% endunless %}{
-		"title": {{post.title | jsonify}},
-		"content": {{post.content | markdownify | strip_html | jsonify}},
-		"link": "{{ site.baseurl }}{{ post.url }}",
-		"date": "{{ post.date }}",
-		"excerpt": "{{ post.snippet }}",
-		"search_omit": "{{ post.search_omit }}"
+
+
+
+
+	
+	{
+		"title": "About",
+		"content": "“About” introductory paragraph.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna. Aenean blandit, ligula ac faucibus posuere, felis est consequat est, id mollis ligula velit id erat. Vivamus in ullamcorper ex, nec faucibus diam. Aenean eros purus, elementum sed nunc vitae, faucibus semper nibh. In ac nisl vitae massa scelerisque sagittis a elementum lectus.\n\n\n",
+		"link": "/about.html",
+		"date": "2016-04-13",
+		"excerpt": null,
+		"search_omit": ""
 	}
-	{% assign first = false %}
-	{% endif %}
-{% endfor %}
+	
+	
 
-{% for page in site.pages %}
-	{% if page.title != null and page.title != empty %}
-	{% unless first %},{% endunless %}{
-		"title": {{page.title | jsonify}},
-		"content": {{page.content | strip_html | jsonify}},
-		"link": "{{ site.baseurl }}{{ page.url | replace: 'index.html', '' }}",
-		"date": {{ page.date | jsonify }},
-		"excerpt": {{ page.description | jsonify }},
-		"search_omit": "{{ page.search_omit }}"
+	
+	,{
+		"title": "Accolades",
+		"content": "“Accolades” introductory paragraph.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna. Aenean blandit, ligula ac faucibus posuere, felis est consequat est, id mollis ligula velit id erat. Vivamus in ullamcorper ex, nec faucibus diam. Aenean eros purus, elementum sed nunc vitae, faucibus semper nibh. In ac nisl vitae massa scelerisque sagittis a elementum lectus.\n",
+		"link": "/accolades.html",
+		"date": "2016-04-02",
+		"excerpt": null,
+		"search_omit": ""
 	}
-	{% assign first = false %}
-	{% endif %}
-{% endfor %}
+	
+	
+
+	
+	,{
+		"title": "CV",
+		"content": "\n  2015 graduate with a Master’s Degree in Comparative Politics from the University of Bergen. Currently a Research Assistant at the Norwegian School of Economics and Substitute Teacher through PVS.\n\n",
+		"link": "/cv.html",
+		"date": "2016-04-02",
+		"excerpt": null,
+		"search_omit": ""
+	}
+	
+	
+
+	
+
+	
+
+	
+
+	
+	,{
+		"title": "Home",
+		"content": "A skeleton-site for a personal academic website, written in Jekyll for hosting with GitHub Pages.\n\n## Features\n- Minimal, clean design\n\t- CV-specific print-style\n- Responsive layout with collapsible sidebar-menu\n\t- Hierarchical menu with deep linking\n- Site-wide search-system\n- Simple social sharing buttons\n- Optional MathJax for displaying mathematical notations\n\n## Setup\n\n1. Register an account with GitHub\n2. Fork `https://github.com/OleVik/personal-academic-website`\n3. Rename repository to `username.github.io`, where `username` is your GitHub-username\n4. Set `baseurl` to `username.github.io` in `_config.yml`\n5. Edit Markdown-files (`.md`)\n\nEdit the pages using any Markdown-editor (see below) or text-editor, then upload them.\n\n### Custom Domain\nIf you want to use a custom domain, ie. not `username.github.io` but something like `mywebsite.com`, read [this guide](https://help.github.com/articles/using-a-custom-domain-with-github-pages/).\n\n## Workflow\nPages are written Markdown and use FrontMatter. For Markdown, see [this cheatsheet](http://ricostacruz.com/cheatsheets/markdown.html) or [this quick guide](https://milanaryal.com/2015/writing-on-github-pages-and-jekyll-using-markdown/). Alternatively, view the default \"Hello\"-document on [StackEdit](https://stackedit.io/editor).\n\n### FrontMatter\nDefines the settings for each page, using this format (minimal requirements for each page):\n\n- Title: Double quote-encapsulated string naming the page\n- Summary: Double quote-encapsulated string describing the page\n- Date: Date for when the page was written (YYYY-MM-DD)\n- Layout: String governing layout to use, either \"default\" or \"cv\" (no quotes)\n\nFor example:\n\n```\n---\ntitle: \"About\"\nsummary: \"About this page.\"\ndate: 2016-04-02\nlayout: default\n---\n```\n\nMore options are [available here](https://jekyllrb.com/docs/frontmatter/).\n\nNotes:\n\n1. Indentation, if used, must be two spaces (not tabs).\n2. Colons (`:`) can only be used in strings if enclosed in quotes.\n3. Dashes can be used in strings, but should otherwise also be enclosed in quotes (see [this](https://docs.saltstack.com/en/latest/topics/yaml/)).\n\n### FrontMatter for the CV\n- Layout must be \"cv\" (`layout: cv`)\n- See `cv.md` for other variables\n- List-elements are the following: `experience, education, positions`\n\t- These consist of nested lists in YAML, for example:\n\n```\neducation:\n  - years: 2013-2015\n    name: Master’s Degree\n    location: University\n    description: Includes qualitative and quantitative methods.\n  - years: 2010-2013\n    name: Bachelor’s Degree\n    location: University\n    description: Includes statistics and maths.\n```\n\nTo add other list-elements, edit `_layouts/cv.html`, and duplicate the blocks of code including a for-loop, changing the variable (`page.variable`) in:\n\n```\n{% raw %}{% for item in page.experience %}\n\tVarious HTML code...\n{% endfor %}{% endraw %}\n```\n\nTo whatever you name the list.\n\n### Editors\nIn order of most recommended for this workflow:\n\n- [Prose](http://prose.io/#about): \"Simple content authoring environment for CMS-free websites\", very easy to use for editing GitHub Pages.\n\t- Direct editing, only requires GitHub authorization.\n- [StackEdit](https://stackedit.io/): Elegant interface with live preview and extensive features.\n\t- Can publish to GitHub, saves documents in local browser storage or the cloud.\n- [DraftIn](http://docs.withdraft.com/): Also elegant and easy-to-use interface with extensive features.\n\t- Requires signup (e-mail).\n\t- Handy [Chrome extension](https://chrome.google.com/webstore/detail/draft/amlbbbgcijmiooecobhkjblcdkjldmdk) for editing text on any website.\n\nOr just edit pages directly on GitHub.\n\n#### Including files on pages\nPDF-files can be linked to from the GitHub Repository, but it is far easier to upload it to [Google Drive](https://drive.google.com/drive/) and embed it (or any other cloud storage that generates an ``-embed tag).\n\nProcedure (from [here](http://www.steegle.com/websites/google-sites-howtos/embed-drive-pdf)):\n\n1. Find the PDF file in Google Drive.\n2. Preview the PDF file in Google Drive.\n3. Pop-out the Google Drive preview.\n4. Use the More actions menu and choose Embed item.\n5. Copy code provided.\n6. Paste it on a separate line in the Markdown-file, like this:\n\n```\nParagraph...\n\n\n\nOther Markdown and text.\n```\n\n#### Site settings\nThe links in the menu, and their order, are edited through `_config.yml`. The format is also nested YAML lists, like the FrontMatter described above. **'baseurl' must be set to your repository (eg. `baseurl: username.github.io`), or the build will fail.** The `name` and `description` variable should also be set, as well as `mathjax: true` if you need to render MathJax formulas on pages.\n\nThe `markdown, encoding, locale` variables **should not be changed**.\n\nTo find the right page-link (`#somethingonthepage`) you open the page, hover a heading so that the icon-link displays, right-click it and choose \"Copy link\". Everything after the `#` is the link for this specific title on the page.\n\nNote that these links must be encapsulated in quotes in the lists in `_config.yml`, or they will be interpreted as code-comments.\n\n### Development\nWritten in [Jekyll](http://jekyllrb.com/), structured with [Bootstrap v4](http://getbootstrap.com/), styled with [plain CSS](http://www.css3-tutorial.net/introduction/what-is-css/). The Jekyll-output (in the `_site`-folder when generated) can be hosted anywhere (static files). For further development, see [Jekyll Tips](http://jekyll.tips/) and [GitHub Pages Setup Guide](http://jmcglone.com/guides/github-pages/).\n",
+		"link": "/",
+		"date": "2016-04-13",
+		"excerpt": null,
+		"search_omit": ""
+	}
+	
+	
+
+	
+	,{
+		"title": "Media",
+		"content": "\"Media\" introductory paragraph.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna. Aenean blandit, ligula ac faucibus posuere, felis est consequat est, id mollis ligula velit id erat. Vivamus in ullamcorper ex, nec faucibus diam. Aenean eros purus, elementum sed nunc vitae, faucibus semper nibh. In ac nisl vitae massa scelerisque sagittis a elementum lectus.",
+		"link": "/media.html",
+		"date": "2016-04-02",
+		"excerpt": null,
+		"search_omit": ""
+	}
+	
+	
+
+	
+	,{
+		"title": "Papers",
+		"content": "\"Papers\" introductory paragraph.\n\n## Working papers\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna. Aenean blandit, ligula ac faucibus posuere, felis est consequat est, id mollis ligula velit id erat. Vivamus in ullamcorper ex, nec faucibus diam. Aenean eros purus, elementum sed nunc vitae, faucibus semper nibh. In ac nisl vitae massa scelerisque sagittis a elementum lectus.\n\n## Published papers\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna. Aenean blandit, ligula ac faucibus posuere, felis est consequat est, id mollis ligula velit id erat. Vivamus in ullamcorper ex, nec faucibus diam. Aenean eros purus, elementum sed nunc vitae, faucibus semper nibh. In ac nisl vitae massa scelerisque sagittis a elementum lectus.\n\nHere is a paper, which you can find at [ResearchGate](http://dx.doi.org/10.13140/RG.2.1.1137.2247).\n\n",
+		"link": "/papers.html",
+		"date": "2016-04-13",
+		"excerpt": null,
+		"search_omit": ""
+	}
+	
+	
+
+	
+	,{
+		"title": "Research",
+		"content": "\"Research\" introductory paragraph.\n\n## Project One\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna.\n\n## Project Two\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna.\n\n## Project Three\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna.\n\n## Project Four\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna.",
+		"link": "/research.html",
+		"date": "2016-04-13",
+		"excerpt": null,
+		"search_omit": ""
+	}
+	
+	
+
+	
+
+	
+	,{
+		"title": "Teaching",
+		"content": "\"Teaching\" introductory paragraph.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna. Aenean blandit, ligula ac faucibus posuere, felis est consequat est, id mollis ligula velit id erat. Vivamus in ullamcorper ex, nec faucibus diam. Aenean eros purus, elementum sed nunc vitae, faucibus semper nibh. In ac nisl vitae massa scelerisque sagittis a elementum lectus.",
+		"link": "/teaching.html",
+		"date": "2016-04-02",
+		"excerpt": null,
+		"search_omit": ""
+	}
+	
+	
+
 ]

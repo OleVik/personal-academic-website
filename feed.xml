@@ -1,29 +1,285 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 	<channel>
-		<title>{{ site.name | xml_escape }}</title>
-		<description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>		
-		<link>{{ site.url }}</link>
-		<atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
-		{% for page in site.pages %}
-			{% if page.title %}
+		<title>Researcher</title>
+		<description>Personal website</description>		
+		<link></link>
+		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+		
+			
 				<item>
-					<title>{{ page.title | xml_escape }}</title>
-					{% if page.author.name %}
-						<dc:creator>{{ page.author.name | xml_escape }}</dc:creator>
-					{% endif %}        
-					{% if page.excerpt %}
-						<description>{{ page.excerpt | xml_escape }}</description>
-					{% else %}
-						<description>{{ page.content | strip_html | xml_escape }}</description>
-					{% endif %}
-					<pubDate>{{ page.date | date_to_rfc822 }}</pubDate>
-					<link>{{ site.url }}{{ page.url }}</link>
-					<guid isPermaLink="true">{{ site.url }}{{ page.url }}</guid>
+					<title>About</title>
+					        
+					
+						<description>“About” introductory paragraph.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna. Aenean blandit, ligula ac faucibus posuere, felis est consequat est, id mollis ligula velit id erat. Vivamus in ullamcorper ex, nec faucibus diam. Aenean eros purus, elementum sed nunc vitae, faucibus semper nibh. In ac nisl vitae massa scelerisque sagittis a elementum lectus.
+
+
+</description>
+					
+					<pubDate>Wed, 13 Apr 2016 00:00:00 +0200</pubDate>
+					<link>/about.html</link>
+					<guid isPermaLink="true">/about.html</guid>
 				</item>
-			{% endif %}
-		{% endfor %}
+			
+		
+			
+				<item>
+					<title>Accolades</title>
+					        
+					
+						<description>“Accolades” introductory paragraph.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna. Aenean blandit, ligula ac faucibus posuere, felis est consequat est, id mollis ligula velit id erat. Vivamus in ullamcorper ex, nec faucibus diam. Aenean eros purus, elementum sed nunc vitae, faucibus semper nibh. In ac nisl vitae massa scelerisque sagittis a elementum lectus.
+</description>
+					
+					<pubDate>Sat, 02 Apr 2016 00:00:00 +0200</pubDate>
+					<link>/accolades.html</link>
+					<guid isPermaLink="true">/accolades.html</guid>
+				</item>
+			
+		
+			
+				<item>
+					<title>CV</title>
+					        
+					
+						<description>
+  2015 graduate with a Master’s Degree in Comparative Politics from the University of Bergen. Currently a Research Assistant at the Norwegian School of Economics and Substitute Teacher through PVS.
+
+</description>
+					
+					<pubDate>Sat, 02 Apr 2016 00:00:00 +0200</pubDate>
+					<link>/cv.html</link>
+					<guid isPermaLink="true">/cv.html</guid>
+				</item>
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				<item>
+					<title>Home</title>
+					        
+					
+						<description>A skeleton-site for a personal academic website, written in Jekyll for hosting with GitHub Pages.
+
+## Features
+- Minimal, clean design
+	- CV-specific print-style
+- Responsive layout with collapsible sidebar-menu
+	- Hierarchical menu with deep linking
+- Site-wide search-system
+- Simple social sharing buttons
+- Optional MathJax for displaying mathematical notations
+
+## Setup
+
+1. Register an account with GitHub
+2. Fork `https://github.com/OleVik/personal-academic-website`
+3. Rename repository to `username.github.io`, where `username` is your GitHub-username
+4. Set `baseurl` to `username.github.io` in `_config.yml`
+5. Edit Markdown-files (`.md`)
+
+Edit the pages using any Markdown-editor (see below) or text-editor, then upload them.
+
+### Custom Domain
+If you want to use a custom domain, ie. not `username.github.io` but something like `mywebsite.com`, read [this guide](https://help.github.com/articles/using-a-custom-domain-with-github-pages/).
+
+## Workflow
+Pages are written Markdown and use FrontMatter. For Markdown, see [this cheatsheet](http://ricostacruz.com/cheatsheets/markdown.html) or [this quick guide](https://milanaryal.com/2015/writing-on-github-pages-and-jekyll-using-markdown/). Alternatively, view the default &quot;Hello&quot;-document on [StackEdit](https://stackedit.io/editor).
+
+### FrontMatter
+Defines the settings for each page, using this format (minimal requirements for each page):
+
+- Title: Double quote-encapsulated string naming the page
+- Summary: Double quote-encapsulated string describing the page
+- Date: Date for when the page was written (YYYY-MM-DD)
+- Layout: String governing layout to use, either &quot;default&quot; or &quot;cv&quot; (no quotes)
+
+For example:
+
+```
+---
+title: &quot;About&quot;
+summary: &quot;About this page.&quot;
+date: 2016-04-02
+layout: default
+---
+```
+
+More options are [available here](https://jekyllrb.com/docs/frontmatter/).
+
+Notes:
+
+1. Indentation, if used, must be two spaces (not tabs).
+2. Colons (`:`) can only be used in strings if enclosed in quotes.
+3. Dashes can be used in strings, but should otherwise also be enclosed in quotes (see [this](https://docs.saltstack.com/en/latest/topics/yaml/)).
+
+### FrontMatter for the CV
+- Layout must be &quot;cv&quot; (`layout: cv`)
+- See `cv.md` for other variables
+- List-elements are the following: `experience, education, positions`
+	- These consist of nested lists in YAML, for example:
+
+```
+education:
+  - years: 2013-2015
+    name: Master’s Degree
+    location: University
+    description: Includes qualitative and quantitative methods.
+  - years: 2010-2013
+    name: Bachelor’s Degree
+    location: University
+    description: Includes statistics and maths.
+```
+
+To add other list-elements, edit `_layouts/cv.html`, and duplicate the blocks of code including a for-loop, changing the variable (`page.variable`) in:
+
+```
+{% raw %}{% for item in page.experience %}
+	Various HTML code...
+{% endfor %}{% endraw %}
+```
+
+To whatever you name the list.
+
+### Editors
+In order of most recommended for this workflow:
+
+- [Prose](http://prose.io/#about): &quot;Simple content authoring environment for CMS-free websites&quot;, very easy to use for editing GitHub Pages.
+	- Direct editing, only requires GitHub authorization.
+- [StackEdit](https://stackedit.io/): Elegant interface with live preview and extensive features.
+	- Can publish to GitHub, saves documents in local browser storage or the cloud.
+- [DraftIn](http://docs.withdraft.com/): Also elegant and easy-to-use interface with extensive features.
+	- Requires signup (e-mail).
+	- Handy [Chrome extension](https://chrome.google.com/webstore/detail/draft/amlbbbgcijmiooecobhkjblcdkjldmdk) for editing text on any website.
+
+Or just edit pages directly on GitHub.
+
+#### Including files on pages
+PDF-files can be linked to from the GitHub Repository, but it is far easier to upload it to [Google Drive](https://drive.google.com/drive/) and embed it (or any other cloud storage that generates an ``-embed tag).
+
+Procedure (from [here](http://www.steegle.com/websites/google-sites-howtos/embed-drive-pdf)):
+
+1. Find the PDF file in Google Drive.
+2. Preview the PDF file in Google Drive.
+3. Pop-out the Google Drive preview.
+4. Use the More actions menu and choose Embed item.
+5. Copy code provided.
+6. Paste it on a separate line in the Markdown-file, like this:
+
+```
+Paragraph...
+
+
+
+Other Markdown and text.
+```
+
+#### Site settings
+The links in the menu, and their order, are edited through `_config.yml`. The format is also nested YAML lists, like the FrontMatter described above. **&#39;baseurl&#39; must be set to your repository (eg. `baseurl: username.github.io`), or the build will fail.** The `name` and `description` variable should also be set, as well as `mathjax: true` if you need to render MathJax formulas on pages.
+
+The `markdown, encoding, locale` variables **should not be changed**.
+
+To find the right page-link (`#somethingonthepage`) you open the page, hover a heading so that the icon-link displays, right-click it and choose &quot;Copy link&quot;. Everything after the `#` is the link for this specific title on the page.
+
+Note that these links must be encapsulated in quotes in the lists in `_config.yml`, or they will be interpreted as code-comments.
+
+### Development
+Written in [Jekyll](http://jekyllrb.com/), structured with [Bootstrap v4](http://getbootstrap.com/), styled with [plain CSS](http://www.css3-tutorial.net/introduction/what-is-css/). The Jekyll-output (in the `_site`-folder when generated) can be hosted anywhere (static files). For further development, see [Jekyll Tips](http://jekyll.tips/) and [GitHub Pages Setup Guide](http://jmcglone.com/guides/github-pages/).
+</description>
+					
+					<pubDate>Wed, 13 Apr 2016 00:00:00 +0200</pubDate>
+					<link>/</link>
+					<guid isPermaLink="true">/</guid>
+				</item>
+			
+		
+			
+				<item>
+					<title>Media</title>
+					        
+					
+						<description>&quot;Media&quot; introductory paragraph.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna. Aenean blandit, ligula ac faucibus posuere, felis est consequat est, id mollis ligula velit id erat. Vivamus in ullamcorper ex, nec faucibus diam. Aenean eros purus, elementum sed nunc vitae, faucibus semper nibh. In ac nisl vitae massa scelerisque sagittis a elementum lectus.</description>
+					
+					<pubDate>Sat, 02 Apr 2016 00:00:00 +0200</pubDate>
+					<link>/media.html</link>
+					<guid isPermaLink="true">/media.html</guid>
+				</item>
+			
+		
+			
+				<item>
+					<title>Papers</title>
+					        
+					
+						<description>&quot;Papers&quot; introductory paragraph.
+
+## Working papers
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna. Aenean blandit, ligula ac faucibus posuere, felis est consequat est, id mollis ligula velit id erat. Vivamus in ullamcorper ex, nec faucibus diam. Aenean eros purus, elementum sed nunc vitae, faucibus semper nibh. In ac nisl vitae massa scelerisque sagittis a elementum lectus.
+
+## Published papers
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna. Aenean blandit, ligula ac faucibus posuere, felis est consequat est, id mollis ligula velit id erat. Vivamus in ullamcorper ex, nec faucibus diam. Aenean eros purus, elementum sed nunc vitae, faucibus semper nibh. In ac nisl vitae massa scelerisque sagittis a elementum lectus.
+
+Here is a paper, which you can find at [ResearchGate](http://dx.doi.org/10.13140/RG.2.1.1137.2247).
+
+</description>
+					
+					<pubDate>Wed, 13 Apr 2016 00:00:00 +0200</pubDate>
+					<link>/papers.html</link>
+					<guid isPermaLink="true">/papers.html</guid>
+				</item>
+			
+		
+			
+				<item>
+					<title>Research</title>
+					        
+					
+						<description>&quot;Research&quot; introductory paragraph.
+
+## Project One
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna.
+
+## Project Two
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna.
+
+## Project Three
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna.
+
+## Project Four
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna.</description>
+					
+					<pubDate>Wed, 13 Apr 2016 00:00:00 +0200</pubDate>
+					<link>/research.html</link>
+					<guid isPermaLink="true">/research.html</guid>
+				</item>
+			
+		
+			
+		
+			
+				<item>
+					<title>Teaching</title>
+					        
+					
+						<description>&quot;Teaching&quot; introductory paragraph.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna. Aenean blandit, ligula ac faucibus posuere, felis est consequat est, id mollis ligula velit id erat. Vivamus in ullamcorper ex, nec faucibus diam. Aenean eros purus, elementum sed nunc vitae, faucibus semper nibh. In ac nisl vitae massa scelerisque sagittis a elementum lectus.</description>
+					
+					<pubDate>Sat, 02 Apr 2016 00:00:00 +0200</pubDate>
+					<link>/teaching.html</link>
+					<guid isPermaLink="true">/teaching.html</guid>
+				</item>
+			
+		
 	</channel>
 </rss>

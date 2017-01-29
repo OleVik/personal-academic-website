@@ -125,3 +125,5 @@ Note that these links must be encapsulated in quotes in the lists in `_config.ym
 
 ### Development
 Written in [Jekyll](http://jekyllrb.com/), structured with [Bootstrap v4](http://getbootstrap.com/), styled with [plain CSS](http://www.css3-tutorial.net/introduction/what-is-css/). The Jekyll-output (in the `_site`-folder when generated) can be hosted anywhere (static files). For further development, see [Jekyll Tips](http://jekyll.tips/) and [GitHub Pages Setup Guide](http://jmcglone.com/guides/github-pages/).
+
+MIT License 2017 by Ole Vik.

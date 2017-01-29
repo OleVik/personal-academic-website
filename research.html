@@ -17,20 +17,26 @@
 
 <!-- Extensive Metadata -->
 
+<meta name="description" content="About this page.">
+
 
 
 <!-- Facebook tags -->
-<meta property="og:title" content="">
+<meta property="og:title" content="Research">
 <meta property="og:type" content="article">
-<meta property="og:url" content="/search//">
+<meta property="og:url" content="/research.html/">
 <meta property="og:image" content="">
-<meta property="og:description" content="">
+<meta property="og:description" content="About this page.">
 <meta property="og:site_name" content="Researcher">
 <meta property="og:locale" content="en_GB">
 
 
+<meta property="article:published_time" content="2016-04-13T00:00:00+02:00">
+<meta property="article:author" content="">
+	
 
-<title>Researcher - </title>
+
+<title>Researcher - Research</title>
 	</head>
 	<body>
 		<div class="pure-container" data-effect="pure-effect-push">
@@ -125,7 +131,7 @@
 			
 			</ul>
 		</aside>
-		<form action="/search" method="get" class="form-inline pull-right invisible" role="search">
+		<form action="/search" method="get" class="form-inline pull-right" role="search">
 			<div class="input-group">
 				<input type="text" class="form-control" placeholder="Search..." name="q">
 				<span class="input-group-btn">
@@ -232,7 +238,7 @@
 			
 			</ul>
 		</aside>
-		<form action="/search" method="get" class="form-inline pull-right invisible" role="search">
+		<form action="/search" method="get" class="form-inline pull-right" role="search">
 			<div class="input-group">
 				<input type="text" class="form-control" placeholder="Search..." name="q">
 				<span class="input-group-btn">
@@ -249,38 +255,38 @@
 	<h2><a href="/" rel="home">Researcher</a></h2>
 </header>
 								<article>
-									<h1>Search</h1>
-									<p>Find keywords or phrases anywhere on the site.</p>
-									<!-- Search form -->						
-									<form method="get" action="/search" class="form-inline" role="search" data-search-form>
-										<div class="input-group">
-											<input type="search" name="q" id="q" class="form-control" placeholder="Enter search term" data-search-input />
-											<span class="input-group-btn">
-												<button class="btn btn-secondary" type="submit">
-													<i class="fa fa-search"></i>
-												</button>
-											</span>
-										</div>
-									</form>
-									
-									<!-- Search results placeholder -->
-									<p data-search-found>
-										<span data-search-found-count></span> result(s) found for <em><span data-search-found-term></span></em>.
-									</p>
-									<div data-search-results></div>
-									<!-- Search result template -->
-									<script type="text/x-template" id="search-result">
-										<div>
-											<h4><a href="##Url##">##Title##</a></h4>
-											<small class="text-muted">##Date##</small>
-											<p>##AutoExcerpt##</p>
-											<a href="##Url##">
-												<button type="button" class="btn btn-secondary btn-sm">
-													Read <i class="fa fa-angle-double-right"></i>
-												</button>
-											</a>
-										</div>
-									</script>
+									<h1>Research</h1>
+									<p>“Research” introductory paragraph.</p>
+
+<h2 id="project-one">Project One</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna.</p>
+
+<h2 id="project-two">Project Two</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna.</p>
+
+<h2 id="project-three">Project Three</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna.</p>
+
+<h2 id="project-four">Project Four</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus molestie libero id blandit. Ut condimentum urna eget cursus scelerisque. Proin bibendum finibus urna.</p>
+
+									<small class="text-muted">Last updated on April 13, 2016</small>
+									<hr />
+<a class="social" href="https://www.facebook.com/sharer/sharer.php?u=/research.html&t=Research" target="_blank" title="Share on Facebook">
+	<button type="button" class="btn btn-secondary btn-sm">
+		<i class="fa fa-facebook"></i>Facebook
+	</button>
+</a>
+<a class="social" href="https://twitter.com/intent/tweet?source=/research.html&text=Research" target="_blank" title="Tweet">
+	<button type="button" class="btn btn-secondary btn-sm">
+		<i class="fa fa-twitter"></i>Twitter
+	</button>
+</a>
+<a class="social" href="https://plus.google.com/share?url=/research.html" target="_blank" title="Share on Google+">
+	<button type="button" class="btn btn-secondary btn-sm">
+		<i class="fa fa-gplus"></i>Google+
+	</button>
+</a>
 								</article>
 								<footer class="text-xs-center hidden-print">
 									<small class="text-muted">Copyright 2017, all lefts reserved. Developed by <a href="http://olevik.me/">Ole Vik</a>, hosted on GitHub pages.</small>
@@ -293,7 +299,21 @@
 			<label class="pure-overlay" for="pure-toggle-left" data-overlay="left"></label> 
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-		<script src="/assets/js/search.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.0/anchor.js"></script>
+		<script>
+		anchors.options = {
+			placement: 'right',
+			visible: 'touch ',
+			truncate: 128
+		};
+		anchors.add('article h2, article h3, article h4, article h5, article h6');
+		
+		$(function() {
+			$("table").addClass("table");
+			$("table").wrap('<div class="table-responsive"></div>');
+		});
+		</script>
+		
 	</body>
 </html>
