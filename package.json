@@ -1,6 +1,6 @@
 {
   "name": "personal-academic-website",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A skeleton-site for a personal academic website, written in Jekyll for hosting with GitHub Pages.",
   "author": "Ole Vik <git@olevik.me>",
   "private": true,
