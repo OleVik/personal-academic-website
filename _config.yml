@@ -50,5 +50,5 @@ menu_external:
 mathjax: false
 markdown: kramdown
 encoding: utf-8
-baseurl: olevik.github.io
+baseurl: 
 locale: en_GB

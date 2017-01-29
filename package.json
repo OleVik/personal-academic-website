@@ -1,0 +1,15 @@
+{
+  "name": "personal-academic-website",
+  "version": "1.1.0",
+  "description": "A skeleton-site for a personal academic website, written in Jekyll for hosting with GitHub Pages.",
+  "author": "Ole Vik <git@olevik.me>",
+  "private": true,
+  "license": "SEE LICENSE IN <LICENSE>",
+  "scripts": {
+    "serve": "jekyll serve",
+    "clean": "rm -rf _site/*",
+    "build": "jekyll build",
+    "release": "npm run clean && npm run build",
+    "deploy": "cd _site && git add --all && git commit -m \"Release\" && git push"
+  }
+}
