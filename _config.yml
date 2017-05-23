@@ -1,53 +1,22 @@
 name: Researcher
 description: Personal website
 menu:
- - page: About
-   url: /about
+ - page: CV
+   url: /cv
  - page: Papers
    url: /papers
-   links:
-    - title: Working papers
-      url: "#working-papers"
-    - title: Published papers
-      url: "#published-papers"
- - page: Research Projects
-   url: /research
-   links:
-    - title: "Project One"
-      url: "#project-one"
-    - title: "Project Two"
-      url: "#project-two"
-    - title: "Project Three"
-      url: "#project-three"
-    - title: "Project Four"
-      url: "#project-four"
- - page: Curriculum Vitae
-   url: /cv
-   links:
-    - title: Experience
-      url: "#experience"
-    - title: Education
-      url: "#education"
-    - title: Positions
-      url: "#positions"
-    - title: Miscellaneous
-      url: "#miscellaneous"
  - page: Teaching
    url: /teaching
- - page: Media
+ - page: Links
    url: /media
- - page: Accolades
-   url: /accolades
 menu_external:
- - title: OleVik.me
-   url: "http://olevik.me/"
- - title: Research Gate
-   url: "https://www.researchgate.net/profile/Ole_Vik"
+ - title: Google Scholar
+   url: "https://scholar.google.co.uk/citations?user=mtu_xWYAAAAJ&hl=en"
+ - title: ORCID
+   url: "http://orcid.org/0000-0002-4726-3305"
  - title: LinkedIn
-   url: "https://no.linkedin.com/in/olehhvik"
- - title: Twitter
-   url: "https://twitter.com/olehhv"
-mathjax: false
+   url: "https://www.linkedin.com/in/davide-facoetti-02540355/"
+mathjax: true
 markdown: kramdown
 encoding: utf-8
 baseurl: 
