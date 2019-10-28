@@ -1,0 +1,41 @@
+---
+layout: null
+---
+[
+  {% for post in site.posts %}
+    {
+      "title"    : "{{ post.title | escape }}",
+      "category" : "{{ post.category }}",
+      "tags"     : "{{ post.tags | join: ', ' }}",
+      "url"      : "{{ site.baseurl }}{{ post.url }}",
+      "date"     : "{{ post.date }}"
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+
+  {% for post in site.posts %}
+    {% if post.title != null and post.title != empty %}
+      "title": {{post.title | jsonify}},
+      "content": {{ post.content | markdownify | strip_html | jsonify }},
+      "link": "{{ site.baseurl }}{{ post.url }}",
+      "date": "{{ post.date }}",
+      "excerpt": {{ post.content | truncatewords:75 | strip_html | jsonify }},
+      "search_omit": "{{ post.search_omit }}"
+    }
+    {% unless forloop.last %},{% endunless %}
+    {% endif %}
+  {% endfor %}
+
+  {% for page in site.pages %}
+    {% if page.title != null and page.title != empty %}
+    {% unless first %},{% endunless %}{
+      "title": {{page.title | jsonify}},
+      "content": {{ page.content | strip_html | jsonify }},
+      "link": "{{ site.baseurl }}{{ page.url | replace: 'index.html', '' }}",
+      "date": {{ page.date | jsonify }},
+      "excerpt": {{ page.content | truncatewords:75 | strip_html | jsonify }},
+      "search_omit": "{{ page.search_omit }}"
+    }
+    {% unless forloop.last %},{% endunless %}
+    {% endif %}
+  {% endfor %}
+]

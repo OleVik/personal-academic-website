@@ -40,25 +40,8 @@ search_omit: true
 											</span>
 										</div>
 									</form>
-									
 									<!-- Search results placeholder -->
-									<p data-search-found>
-										<span data-search-found-count></span> result(s) found for <em><span data-search-found-term></span></em>.
-									</p>
-									<div data-search-results></div>
-									<!-- Search result template -->
-									<script type="text/x-template" id="search-result">
-										<div>
-											<h4><a href="##Url##">##Title##</a></h4>
-											<small class="text-muted">##Date##</small>
-											<p>##AutoExcerpt##</p>
-											<a href="##Url##">
-												<button type="button" class="btn btn-secondary btn-sm">
-													Read <i class="fa fa-angle-double-right"></i>
-												</button>
-											</a>
-										</div>
-									</script>
+                  <div id="results-container"></div>
 								</article>
 								<footer class="text-xs-center hidden-print">
 									<small class="text-muted">Copyright {{ site.time | date: '%Y' }}, all lefts reserved. Developed by <a href="http://olevik.me/">Ole Vik</a>, hosted on GitHub pages.</small>
@@ -72,6 +55,40 @@ search_omit: true
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
-		<script src="/assets/js/search.js"></script>
+		<script src="/assets/js/simple-jekyll-search.min.js"></script>
+		<script>
+    function findGetParameter(parameterName, type = null) {
+      var result = null,
+        tmp = [];
+      location.search
+        .substr(1)
+        .split("&")
+        .forEach(function(item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) {
+            result = decodeURIComponent(tmp[1]);
+          }
+        });
+      if (result !== null) {
+        return result;
+      } else {
+        return type;
+      }
+    }
+    
+    window.onload = function() {
+      fetch(new Request('/assets/search.json'))
+        .then(response => response.json())
+        .then(data => {
+          var sjs = SimpleJekyllSearch({
+            searchInput: document.getElementById('q'),
+            resultsContainer: document.getElementById('results-container'),
+            json: data,
+            searchResultTemplate: '<div><h4><a href="{{ site.url }}{url}">{title}</a></h4><small class="text-muted">{date}</small><p>{excerpt}</p></div>'
+          });
+          sjs.search(findGetParameter('q'));
+        });
+      }
+		</script>
 	</body>
 </html>
