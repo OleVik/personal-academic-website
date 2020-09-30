@@ -1,7 +1,9 @@
 # Personal Academic Website
+
 A skeleton-site for a personal academic website, written in Jekyll for hosting with GitHub Pages.
 
 ## Features
+
 - Minimal, clean design
 	- CV-specific print-style
 - Responsive layout with collapsible sidebar-menu
@@ -21,12 +23,15 @@ A skeleton-site for a personal academic website, written in Jekyll for hosting w
 Edit the pages using any Markdown-editor (see below) or text-editor, then upload them.
 
 ### Custom Domain
+
 If you want to use a custom domain, ie. not `username.github.io` but something like `mywebsite.com`, read [this guide](https://help.github.com/articles/using-a-custom-domain-with-github-pages/).
 
 ## Workflow
+
 Pages are written Markdown and use FrontMatter. For Markdown, see [this cheatsheet](http://ricostacruz.com/cheatsheets/markdown.html) or [this quick guide](https://milanaryal.com/2015/writing-on-github-pages-and-jekyll-using-markdown/). Alternatively, view the default "Hello"-document on [StackEdit](https://stackedit.io/editor).
 
 ### FrontMatter
+
 Defines the settings for each page, using this format (minimal requirements for each page):
 
 - Title: Double quote-encapsulated string naming the page
@@ -54,6 +59,7 @@ Notes:
 3. Dashes can be used in strings, but should otherwise also be enclosed in quotes (see [this](https://docs.saltstack.com/en/latest/topics/yaml/)).
 
 ### FrontMatter for the CV
+
 - Layout must be "cv" (`layout: cv`)
 - See `cv.md` for other variables
 - List-elements are the following: `experience, education, positions`
@@ -62,11 +68,11 @@ Notes:
 ```
 education:
   - years: 2013-2015
-    name: Master’s Degree
+    name: Masterâ€™s Degree
     location: University
     description: Includes qualitative and quantitative methods.
   - years: 2010-2013
-    name: Bachelor’s Degree
+    name: Bachelorâ€™s Degree
     location: University
     description: Includes statistics and maths.
 ```
@@ -82,6 +88,7 @@ To add other list-elements, edit `_layouts/cv.html`, and duplicate the blocks of
 To whatever you name the list.
 
 ### Editors
+
 In order of most recommended for this workflow:
 
 - [Prose](http://prose.io/#about): "Simple content authoring environment for CMS-free websites", very easy to use for editing GitHub Pages.
@@ -95,6 +102,7 @@ In order of most recommended for this workflow:
 Or just edit pages directly on GitHub.
 
 #### Including files on pages
+
 PDF-files can be linked to from the GitHub Repository, but it is far easier to upload it to [Google Drive](https://drive.google.com/drive/) and embed it (or any other cloud storage that generates an `<iframe>`-embed tag).
 
 Procedure (from [here](http://www.steegle.com/websites/google-sites-howtos/embed-drive-pdf)):
@@ -115,6 +123,7 @@ Other Markdown and text.
 ```
 
 #### Site settings
+
 The links in the menu, and their order, are edited through `_config.yml`. The format is also nested YAML lists, like the FrontMatter described above. **'baseurl' must be set to your repository (eg. `baseurl: username.github.io`), or the build will fail.** The `name` and `description` variable should also be set, as well as `mathjax: true` if you need to render MathJax formulas on pages.
 
 The `markdown, encoding, locale` variables **should not be changed**.
@@ -124,9 +133,11 @@ To find the right page-link (`#somethingonthepage`) you open the page, hover a h
 Note that these links must be encapsulated in quotes in the lists in `_config.yml`, or they will be interpreted as code-comments.
 
 ### Development
+
 Written in [Jekyll](http://jekyllrb.com/), structured with [Bootstrap v4](http://getbootstrap.com/), styled with [plain CSS](http://www.css3-tutorial.net/introduction/what-is-css/). The Jekyll-output (in the `_site`-folder when generated) can be hosted anywhere (static files). For further development, see [Jekyll Tips](http://jekyll.tips/) and [GitHub Pages Setup Guide](http://jmcglone.com/guides/github-pages/).
 
 #### Docker
+
 If you have Docker installed locally, you can start developing locally by cloning your repository to a local folder, and run `docker-compose up` in a terminal. The output will tell you what address to open in your browser.
 
 MIT License 2016-2019 by Ole Vik.
