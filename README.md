@@ -1,3 +1,4 @@
+# This is an awesome academic website
 # Personal Academic Website
 A skeleton-site for a personal academic website, written in Jekyll for hosting with GitHub Pages.
 
@@ -62,11 +63,11 @@ Notes:
 ```
 education:
   - years: 2013-2015
-    name: Master’s Degree
+    name: Masterâ€™s Degree
     location: University
     description: Includes qualitative and quantitative methods.
   - years: 2010-2013
-    name: Bachelor’s Degree
+    name: Bachelorâ€™s Degree
     location: University
     description: Includes statistics and maths.
 ```
